@@ -15,23 +15,6 @@ import image14 from "~/assets/images/wesley-tingey-sPBRRwT_fKA-unsplash.jpg";
 
 import type { ProductCardInfo } from "./products.types";
 
-const images = [
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
-  image7,
-  image8,
-  image9,
-  image10,
-  image11,
-  image12,
-  image13,
-  image14,
-];
-
 export function generateProductCards(count: number) {
   return Array.from(Array(count)).map((_, index) => generateProductCard(index));
 }
@@ -59,3 +42,20 @@ function getRandomImage() {
   const imageIndex = Math.floor(Math.random() * images.length);
   return images[imageIndex];
 }
+
+const images = [
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  image8,
+  image9,
+  image10,
+  image11,
+  image12,
+  image13,
+  image14,
+];
