@@ -43,24 +43,13 @@ export const LandingSlider = ({
   return (
     <Swiper
       modules={[Autoplay, FreeMode]}
-      autoplay={{
-        pauseOnMouseEnter: true,
-        disableOnInteraction: false,
-      }}
-      freeMode={{
-        enabled: true,
-        sticky: true,
-      }}
+      autoplay={{ pauseOnMouseEnter: true, disableOnInteraction: false }}
+      freeMode={{ enabled: true, sticky: true }}
       loop={canLoop}
       centerInsufficientSlides={!canLoop}
       speed={750}
       slidesPerView={3}
-      breakpoints={{
-        768: {
-          slidesPerView: 5,
-        },
-      }}
-      // enabled={false}
+      breakpoints={{ 768: { slidesPerView: 5 } }}
     >
       {content.map((item) => (
         <SwiperSlide key={item.key} className='px-2 md:px-3'>
