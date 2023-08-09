@@ -86,7 +86,7 @@ const SliderPlaceholder = ({
       <div
         className='grid px-2 gap-4 md:hidden'
         style={{
-          gridTemplateColumns: `repeat(${mobileSlidesCount}, minmax(0, 1fr));`,
+          gridTemplateColumns: `repeat(${mobileSlidesCount}, minmax(0, 1fr))`,
         }}
       >
         {...content.slice(0, mobileSlidesCount)}
@@ -94,7 +94,7 @@ const SliderPlaceholder = ({
       <div
         className='hidden px-3 gap-6 md:grid'
         style={{
-          gridTemplateColumns: `repeat(${pcSlidesCount}, minmax(0, 1fr));`,
+          gridTemplateColumns: `repeat(${pcSlidesCount}, minmax(0, 1fr))`,
         }}
       >
         {...content.slice(0, pcSlidesCount)}

@@ -15,19 +15,18 @@ export { loader } from "./server";
 
 export default function Index() {
   const { productCards } = useLoaderData<typeof loader>();
+  const content = useSliderContent(productCards);
 
-  const content = useMemo(
-    () => createSliderContent(productCards),
-    [productCards]
-  );
-
-  return (
-    <div>
-      <LandingSlider content={content} />
-    </div>
-  );
+  return <LandingSlider content={content} />;
 }
 
-function createSliderContent(productCards: ProductCardInfo[]) {
-  return productCards.map((card) => <ProductCard data={card} key={card.id} />);
+/**
+ * Мемоизирует список карточек для слайдера, чтобы они не пересоздавались при
+ * каждом ререндере. По идее не должно повлиять на интерактивность карточек.
+ */
+function useSliderContent(productCards: ProductCardInfo[]) {
+  return useMemo(
+    () => productCards.map((card) => <ProductCard data={card} key={card.id} />),
+    [productCards]
+  );
 }
