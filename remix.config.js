@@ -1,10 +1,6 @@
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
   ignoredRouteFiles: ["**/.*"],
-  // appDirectory: "app",
-  // assetsBuildDirectory: "public/build",
-  // serverBuildPath: "build/index.js",
-  // publicPath: "/build/",
   serverModuleFormat: "cjs",
   future: {
     v2_dev: true,
@@ -14,4 +10,10 @@ module.exports = {
     v2_normalizeFormMethod: true,
     v2_routeConvention: true,
   },
+  tailwind: true,
+
+  /** Чтобы Swiper правильно бандлился, необходимо тут указать паттерн,
+   *  совпадающий с нахванием его пакета.
+   * */
+  serverDependenciesToBundle: [/^swiper.*/],
 };
